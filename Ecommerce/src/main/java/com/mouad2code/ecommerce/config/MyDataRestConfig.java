@@ -28,26 +28,26 @@ public class MyDataRestConfig implements RepositoryRestConfigurer{
 		entityManager = theEntityManager;
 	}
 
-	@Override
-	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-		
-		HttpMethod[] theUnsupporttedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
-		// disable HTTP methods for Product: PUT, POST and DELETE
-		config.getExposureConfiguration()
-		       .forDomainType(Product.class)
-		       .withItemExposure((metdata, HttpMethods) -> HttpMethods.disable(theUnsupporttedActions))
-		       .withCollectionExposure((metata, HttpMethods) -> HttpMethods.disable(theUnsupporttedActions));
-		
-		
-		// disable HTTP methods for ProductCategory: PUT, POST and DELETE
-				config.getExposureConfiguration()
-				       .forDomainType(ProductCategory.class)
-				       .withItemExposure((metdata, HttpMethods) -> HttpMethods.disable(theUnsupporttedActions))
-				       .withCollectionExposure((metata, HttpMethods) -> HttpMethods.disable(theUnsupporttedActions));
-				
-				// call an internal helper method
-				exposeIds(config);
-	}
+	/*
+	 * @Override public void
+	 * configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+	 * 
+	 * HttpMethod[] theUnsupporttedActions = {HttpMethod.PUT, HttpMethod.POST,
+	 * HttpMethod.DELETE}; // disable HTTP methods for Product: PUT, POST and DELETE
+	 * config.getExposureConfiguration() .forDomainType(Product.class)
+	 * .withItemExposure((metdata, HttpMethods) ->
+	 * HttpMethods.disable(theUnsupporttedActions)) .withCollectionExposure((metata,
+	 * HttpMethods) -> HttpMethods.disable(theUnsupporttedActions));
+	 * 
+	 * 
+	 * // disable HTTP methods for ProductCategory: PUT, POST and DELETE
+	 * config.getExposureConfiguration() .forDomainType(ProductCategory.class)
+	 * .withItemExposure((metdata, HttpMethods) ->
+	 * HttpMethods.disable(theUnsupporttedActions)) .withCollectionExposure((metata,
+	 * HttpMethods) -> HttpMethods.disable(theUnsupporttedActions));
+	 * 
+	 * // call an internal helper method exposeIds(config); }
+	 */
 
 	private void exposeIds(RepositoryRestConfiguration config) {
 		
