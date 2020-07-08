@@ -19,7 +19,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="product")
-
 public class Product {
 
     @Id
@@ -28,7 +27,7 @@ public class Product {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = true)
     private ProductCategory category;
 
     @Column(name = "sku")

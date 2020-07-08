@@ -1,4 +1,4 @@
-package com.moad2code.ecommerce.controller;
+package com.mouad2code.ecommerce.controller;
 
 import java.util.List;
 
